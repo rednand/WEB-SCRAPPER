@@ -3,6 +3,12 @@ const express = require("express");
 const puppetter = require("puppeteer");
 const server = express();
 
+server.get("/", async (request, response) => {
+  (async () => {
+    response.send("Digite o nome no final da url");
+  })();
+});
+
 server.get("/:query", async (request, response) => {
   const { query } = request.params;
   (async () => {
