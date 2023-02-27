@@ -1,10 +1,9 @@
 const { request } = require("express");
 const express = require("express");
 const puppetter = require("puppeteer");
-
 const server = express();
 
-server.get("/:query", (request, response) => {
+server.get("/:query", async (request, response) => {
   const { query } = request.params;
   (async () => {
     const browser = await puppetter.launch();
